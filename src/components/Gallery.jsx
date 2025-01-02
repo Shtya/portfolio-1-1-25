@@ -53,7 +53,7 @@ export default function Gallery() {
     };
 
     return (
-        <div className='py-[80px]' style={{backgroundImage:`url('${dots.src}')`}}>
+        <div id="projects" className='py-[80px]' style={{backgroundImage:`url('${dots.src}')`}}>
             <div className='container px-[20px] '>
                 <div className='my-4'>
                     <h1 >My Projects</h1>
