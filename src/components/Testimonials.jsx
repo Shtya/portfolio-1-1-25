@@ -50,11 +50,6 @@ const Testimonials = () => {
       ]
     };
     const data = [
-      // {img : Img1 , h1:"Eslam Abd Elazeem" , p:  "انت ادتني شغف اكمل بعد ما كنت قربت افقده ربنا يوفقك حاجه جميله جدااا"      },
-      // {img : Img2 , h1:"Mohamed Kamal"     , p:  "الله اكبر انا مشوفتش بورتفوليو بالجمال ده قبل كده بم الله ما شاء الله"      },
-      // {img : Img3 , h1:"Islam Abdel Radi"  , p:  "عاش جدا عجبتني الالوان والتناسق بتاعهم استمر من نجاح لنجاح اكبر 🥰"      },
-      // {img : Img1 , h1:"KAREEM EL3SAWY"    , p:  "it's perfect ماشاء الله عليك شغل ممتاز جدا بارك الله فيك"      },
-      // {img : Img2 , h1:"Omar Fathy"        , p:  "ماشاء الله شغل كله محترم تسمح لي بأقناء HTML,CSS Dashboard للتعديل عليها وتحويلها إلي ريأكت"      },
       {img : Img3 , h1:"hamza"             , p:  "Ahmed Abdelrhman has helped my team and I stay on the same page. Previously, we were all over the board. working with Ahmed Abdelrhman has definitely saved us time and money."      },
       {img : Img1 , h1 :"Eslam Abd Elazeem" , p:"Working with Ahmed Abdelrhman was a pleasure. Their expertise in both front-end and back-end development allowed us to create a seamless user experience for our project. Their attention to detail and problem-solving skills were invaluable."},
       {img : Img2 , h1 :"Mohamed Kamal"     , p:"I had the pleasure of collaborating with Ahmed Abdelrhman on a complex web application. Their ability to quickly grasp new concepts and technologies, coupled with their efficient coding practices, made them an indispensable member of our development team."},
