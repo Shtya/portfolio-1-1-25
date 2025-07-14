@@ -361,9 +361,9 @@ export default function Portfolio() {
         <meta name='description' content='Professional portfolio of Ahmed Abdelrhman, Full Stack Developer' />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      {isLoading ? (
+      {/* {isLoading ? (
         <LoadingScreen isLoading={isLoading} setIsLoading={setIsLoading} />
-      ) : (
+      ) : ( */}
         <>
           {/* Header */}
           <motion.header className={`fixed w-full z-40 dark:bg-gray-900/95 bg-opacity-95 bg-white/95  backdrop-blur-sm`} initial={{ y: -100 }} animate={{ y: 0 }} transition={{ type: 'spring', stiffness: 300, damping: 20 }}>
@@ -551,7 +551,7 @@ export default function Portfolio() {
           {/* Testimonials Section */}
           <Testimonials lang={language} t={t} darkMode={darkMode} />
         </>
-      )}
+      {/* )} */}
 
       {/* Custom Cursor */}
       <CustomCursor />
