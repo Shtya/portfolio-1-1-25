@@ -34,15 +34,15 @@ import Img08 from '@/assets/image-project/6real.jpeg';
 import Img09 from '@/assets/image-project/ec.jpeg';
 import Title from './Title';
 
-import Img001 from "@/assets/projects/m5zoon-task.png"
-import Img002 from "@/assets/projects/venuat.png"
-import Img003 from "@/assets/projects/washak.png"
-import Img004 from "@/assets/projects/m5zoon.png"
-import Img005 from "@/assets/projects/m5zoon-dashbard.png"
-import Img006 from "@/assets/projects/fraktfinder.png"
-import Img007 from "@/assets/projects/barakah.png"
-import Img008 from "@/assets/projects/soomha.png"
-import Img009 from "@/assets/projects/joe_brain.png"
+import Img001 from '@/assets/projects/m5zoon-task.png';
+import Img002 from '@/assets/projects/venuat.png';
+import Img003 from '@/assets/projects/washak.png';
+import Img004 from '@/assets/projects/m5zoon.png';
+import Img005 from '@/assets/projects/m5zoon-dashbard.png';
+import Img006 from '@/assets/projects/fraktfinder.png';
+import Img007 from '@/assets/projects/barakah.png';
+import Img008 from '@/assets/projects/soomha.png';
+import Img009 from '@/assets/projects/joe_brain.png';
 /**
  * brand hub
  * ecom station 
@@ -56,15 +56,15 @@ import Img009 from "@/assets/projects/joe_brain.png"
 
   */
 const projects = [
-  {img : Img001  , type : "next" , title  : "Sponsored Ad" , visit : "https://landing-22.vercel.app"},
-  {img : Img002  , type : "next nest" , title  : "Venuat" , visit : "https://venuat-frontend.vercel.app"},
-  {img : Img003  , type : "next" , title  : "Washak Store" , visit : "https://washak.vercel.app"},
-  {img : Img004  , type : "next" , title  : "m5zoon" , visit : "https://m5zoon.com/"},
-  {img : Img005  , type : "next" , title  : "m5zoon dashboard" , visit : "https://m5zoon-merchant-react.vercel.app"},
-  {img : Img006  , type : "next" , title  : "FraktFinder" , visit : "https://www.fraktfinder.se/en"},
-  {img : Img007  , type : "next nest" , title  : "Barakah management" , visit : "https://barakah.vercel.app/en"},
-  {img : Img008  , type : "next" , title  : "Soomha" , visit : "https://soomha.net/en"},
-  {img : Img009  , type : "next nest" , title  : "Joe Brain" , visit : "https://joebrain.codelooms.dev/en/thread"},
+  { img: Img001, type: 'next', title: 'Sponsored Ad', visit: 'https://landing-22.vercel.app' },
+  { img: Img002, type: 'next nest', title: 'Venuat', visit: 'https://venuat-frontend.vercel.app' },
+  { img: Img003, type: 'next', title: 'Washak Store', visit: 'https://washak.vercel.app' },
+  { img: Img004, type: 'next', title: 'm5zoon', visit: 'https://m5zoon.com/' },
+  { img: Img005, type: 'next', title: 'm5zoon dashboard', visit: 'https://m5zoon-merchant-react.vercel.app' },
+  { img: Img006, type: 'next', title: 'FraktFinder', visit: 'https://www.fraktfinder.se/en' },
+  { img: Img007, type: 'next nest', title: 'Barakah management', visit: 'https://barakah.vercel.app/en' },
+  { img: Img008, type: 'next', title: 'Soomha', visit: 'https://soomha.net/en' },
+  { img: Img009, type: 'next nest', title: 'Joe Brain', visit: 'https://joebrain.codelooms.dev/en/thread' },
 
   { type: 'wordpress', img: Img01, title: 'Barakah', visit: 'https://barakah-ivory.vercel.app/' },
   { type: 'wordpress', img: Img02, title: 'web blog', visit: 'https://blogs-ruby-five.vercel.app/' },
@@ -190,30 +190,30 @@ export default function Projects({ t, lang }) {
     }
   };
 
- useEffect(() => {
+  useEffect(() => {
     async function get() {
       try {
-        const response = await fetch("https://api.github.com/users/Shtya/repos");
+        const response = await fetch('https://api.github.com/users/Shtya/repos');
 
         if (!response.ok) {
-          console.error("Failed to fetch repos. Status:", response.status);
+          console.error('Failed to fetch repos. Status:', response.status);
           return;
         }
 
         const repos = await response.json();
 
-        const projects = repos.map((repo) => ({
-          type: repo.language || "Unknown",
-          img: "",
+        const projects = repos.map(repo => ({
+          type: repo.language || 'Unknown',
+          img: '',
           title: repo.name,
-          view: "",
+          view: '',
           repo_link: repo.html_url,
         }));
 
-        console.log("projects:", projects);
+        console.log('projects:', projects);
         // يمكنك هنا وضع setState لحفظ المشاريع مثلاً
       } catch (error) {
-        console.error("Error fetching repos:", error);
+        console.error('Error fetching repos:', error);
       }
     }
 
@@ -248,12 +248,13 @@ export default function Projects({ t, lang }) {
           {/* Project Cards with Framer Motion */}
           <ul dir='ltr' className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8' key={`${activeFilter}-${currentPage}`}>
             {paginatedProjects.map((project, index) => (
-              <li key={index} data-aos='zoom-in' className=' border border-gray-100/30  relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-white via-slate-50 to-slate-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900'>
-                <span className='absolute inset-0 bg-black/20 z-10 pointer-events-none ' />
+              <li key={index}  data-aos='zoom-in'  className=' border border-gray-100/30 relative group overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900'>
+                <span className='absolute inset-0 bg-black/20 z-10 pointer-events-none' />
+
                 {/* Image Section */}
-                <div className='relative h-64 overflow-hidden'>
-                  <img src={project.img.src} alt={project.title} className='w-full h-full object-cover transition-transform duration-700 group-hover:scale-110' />
-                  <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500'></div>
+                <div className='relative h-64 overflow-hidden flex items-center justify-center p-2 bg-two'>
+                  <img src={project.img.src} alt={project.title} className='w-full h-full object-contain rounded-lg transition-transform duration-700 group-hover:scale-105' />
+                  <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500' />
                 </div>
 
                 {/* Card Content */}
@@ -267,7 +268,7 @@ export default function Projects({ t, lang }) {
                         .split(' ')
                         .filter(cat => cat !== 'all')
                         .map((tech, i) => (
-                          <span key={i} className=' flex items-center justify-center gap-1 text-xs px-3 py-1 rounded-full bg-black/40 text-white/90 border border-white/20 backdrop-blur-md shadow-sm'>
+                          <span key={i} className='flex items-center justify-center gap-1 text-xs px-3 py-1 rounded-full bg-black/40 text-white/90 border border-white/20 backdrop-blur-md shadow-sm'>
                             {getCategoryLabel(tech, lang)}
                           </span>
                         ))}
@@ -275,6 +276,7 @@ export default function Projects({ t, lang }) {
 
                     {/* Action Buttons */}
                     <div className='flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
+                      {/* GitHub */}
                       {project.github && (
                         <a href={project.github} target='_blank' rel='noopener noreferrer' className='flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-white/10 text-white border border-white/20 rounded-lg hover:bg-white/20 transition-all backdrop-blur-md' title='GitHub Repo'>
                           <FaGithub />
@@ -282,9 +284,17 @@ export default function Projects({ t, lang }) {
                         </a>
                       )}
 
+                      {/* Visit Site */}
                       <a href={project.visit} target='_blank' rel='noopener noreferrer' className='flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-fuchsia-600 to-blue-500 hover:from-fuchsia-700 hover:to-blue-600 rounded-lg text-white transition-all shadow-md' title='Live Preview'>
                         <FaExternalLinkAlt />
                         <span className='text-sm font-medium'>Visit</span>
+                      </a>
+
+                      {/* View Image */}
+                      <a href={project.img.src} target='_blank' rel='noopener noreferrer' className='flex items-center justify-center px-3 py-2 bg-white/10 text-white border border-white/20 rounded-lg hover:bg-white/20 transition-all backdrop-blur-md' title='View Image'>
+                        <svg xmlns='http://www.w3.org/2000/svg' className='h-4 w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+                          <path strokeLinecap='round' strokeLinejoin='round' strokeWidth={2} d='M15 10l4.553-4.553a1.2 1.2 0 00-1.697-1.697L13 8.3m-1 6.4a5 5 0 100-10 5 5 0 000 10z' />
+                        </svg>
                       </a>
                     </div>
                   </div>
@@ -319,111 +329,110 @@ export default function Projects({ t, lang }) {
   );
 }
 
-
 [
-    {
-        "type": "JavaScript",
-        "img": "",
-        "title": "Barakah",
-        "view": "",
-        "repo_link": "https://github.com/Shtya/Barakah"
-    }, 
-    {
-        "type": "JavaScript",
-        "img": "",
-        "title": "blog-client",
-        "view": "",
-        "repo_link": "https://github.com/Shtya/blog-client"
-    }, 
-    {
-        "type": "CSS",
-        "img": "",
-        "title": "blogs",
-        "view": "",
-        "repo_link": "https://github.com/Shtya/blogs"
-    },
-    {
-        "type": "HTML",
-        "img": "",
-        "title": "Clone-Twitter",
-        "view": "",
-        "repo_link": "https://github.com/Shtya/Clone-Twitter"
-    }, 
-    {
-        "type": "HTML",
-        "img": "",
-        "title": "Dashboard",
-        "view": "",
-        "repo_link": "https://github.com/Shtya/Dashboard"
-    }, 
-    {
-        "type": "SCSS",
-        "img": "",
-        "title": "Dev",
-        "view": "",
-        "repo_link": "https://github.com/Shtya/Dev"
-    },
-    {
-        "type": "JavaScript",
-        "img": "",
-        "title": "e-commerce-client",
-        "view": "",
-        "repo_link": "https://github.com/Shtya/e-commerce-client"
-    }, 
-    {
-        "type": "SCSS",
-        "img": "",
-        "title": "Ecwid",
-        "view": "",
-        "repo_link": "https://github.com/Shtya/Ecwid"
-    },
-    {
-        "type": "JavaScript",
-        "img": "",
-        "title": "facebook-client",
-        "view": "",
-        "repo_link": "https://github.com/Shtya/facebook-client"
-    }, 
-    {
-        "type": "SCSS",
-        "img": "",
-        "title": "GYM",
-        "view": "",
-        "repo_link": "https://github.com/Shtya/GYM"
-    },
-    {
-        "type": "nextjs nestjs",
-        "img": "/projects/joe-13.png",
-        "title": "JOE13 Company",
-        "view": "https://joe13th.com/en",
-        "repo_link": "https://github.com/Shtya/joe13-frontend"
-    }, 
-    {
-        "type": "SCSS",
-        "img": "/projects/kasper.png",
-        "title": "HTML",
-        "view": "https://shtya.github.io/Kasper/",
-        "repo_link": "https://github.com/Shtya/Kasper"
-    },
-    {
-        "type": "JavaScript",
-        "img": "",
-        "title": "landing",
-        "view": "",
-        "repo_link": "https://github.com/Shtya/landing"
-    }, 
-    {
-        "type": "reactjs nextjs",
-        "img": "",
-        "title": "Movies",
-        "view": "",
-        "repo_link": "https://github.com/Shtya/Movies"
-    },
-    {
-        "type": "CSS",
-        "img": "",
-        "title": "MRM",
-        "view": "",
-        "repo_link": "https://github.com/Shtya/MRM"
-    }
-]
+  {
+    type: 'JavaScript',
+    img: '',
+    title: 'Barakah',
+    view: '',
+    repo_link: 'https://github.com/Shtya/Barakah',
+  },
+  {
+    type: 'JavaScript',
+    img: '',
+    title: 'blog-client',
+    view: '',
+    repo_link: 'https://github.com/Shtya/blog-client',
+  },
+  {
+    type: 'CSS',
+    img: '',
+    title: 'blogs',
+    view: '',
+    repo_link: 'https://github.com/Shtya/blogs',
+  },
+  {
+    type: 'HTML',
+    img: '',
+    title: 'Clone-Twitter',
+    view: '',
+    repo_link: 'https://github.com/Shtya/Clone-Twitter',
+  },
+  {
+    type: 'HTML',
+    img: '',
+    title: 'Dashboard',
+    view: '',
+    repo_link: 'https://github.com/Shtya/Dashboard',
+  },
+  {
+    type: 'SCSS',
+    img: '',
+    title: 'Dev',
+    view: '',
+    repo_link: 'https://github.com/Shtya/Dev',
+  },
+  {
+    type: 'JavaScript',
+    img: '',
+    title: 'e-commerce-client',
+    view: '',
+    repo_link: 'https://github.com/Shtya/e-commerce-client',
+  },
+  {
+    type: 'SCSS',
+    img: '',
+    title: 'Ecwid',
+    view: '',
+    repo_link: 'https://github.com/Shtya/Ecwid',
+  },
+  {
+    type: 'JavaScript',
+    img: '',
+    title: 'facebook-client',
+    view: '',
+    repo_link: 'https://github.com/Shtya/facebook-client',
+  },
+  {
+    type: 'SCSS',
+    img: '',
+    title: 'GYM',
+    view: '',
+    repo_link: 'https://github.com/Shtya/GYM',
+  },
+  {
+    type: 'nextjs nestjs',
+    img: '/projects/joe-13.png',
+    title: 'JOE13 Company',
+    view: 'https://joe13th.com/en',
+    repo_link: 'https://github.com/Shtya/joe13-frontend',
+  },
+  {
+    type: 'SCSS',
+    img: '/projects/kasper.png',
+    title: 'HTML',
+    view: 'https://shtya.github.io/Kasper/',
+    repo_link: 'https://github.com/Shtya/Kasper',
+  },
+  {
+    type: 'JavaScript',
+    img: '',
+    title: 'landing',
+    view: '',
+    repo_link: 'https://github.com/Shtya/landing',
+  },
+  {
+    type: 'reactjs nextjs',
+    img: '',
+    title: 'Movies',
+    view: '',
+    repo_link: 'https://github.com/Shtya/Movies',
+  },
+  {
+    type: 'CSS',
+    img: '',
+    title: 'MRM',
+    view: '',
+    repo_link: 'https://github.com/Shtya/MRM',
+  },
+];
